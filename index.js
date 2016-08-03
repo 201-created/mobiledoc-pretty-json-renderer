@@ -31,7 +31,7 @@ module.exports = function formatMobiledoc(doc) {
     var key = list.key;
     if (doc[key]) {
       pairs.push({
-        key,
+        key: key,
         value: utils.multiLineArray(doc[key].map(list.formatter))
       });
     }
