@@ -11,9 +11,9 @@ describe('String utilities', function() {
     });
   });
 
-  describe('#arround', function() {
+  describe('#around', function() {
     it('surrounds a string with brackets', function() {
-      assert.equal(utils.arround('foo'), '[foo]');
+      assert.equal(utils.around('foo'), '[foo]');
     });
   });
 
