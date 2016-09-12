@@ -14,11 +14,11 @@ describe('Formatters for each mobiledoc key', function() {
     });
 
     it('formats atom payloads across multiple lines', function() {
-      var atom = ['mention', '@bob', { id: 42 }];
       var expected =
 `["mention", "@bob", {
   "id": 42
 }]`;
+      var atom = JSON.parse(expected);
       assert.equal(formatters.atom(atom), expected);
     });
   });
@@ -29,11 +29,11 @@ describe('Formatters for each mobiledoc key', function() {
     });
 
     it('formats card payload across multiple lines', function() {
-      var card = ['image', {src:'whatever'}];
       var expected =
 `["image", {
   "src": "whatever"
 }]`;
+      var card = JSON.parse(expected);
       assert.equal(formatters.card(card), expected);
     });
   });
@@ -48,18 +48,13 @@ describe('Formatters for each mobiledoc key', function() {
     });
 
     it('formats markers across multiple lines', function() {
-      var section =
-      [1, "h2", [
-        [0, [], 0, "Simple "],
-        [0, [1], 1, "h2"],
-        [0, [], 0, " example"]
-      ]];
       var expected =
 `[1, "h2", [
   [0, [], 0, "Simple "],
   [0, [1], 1, "h2"],
   [0, [], 0, " example"]
 ]]`;
+      var section = JSON.parse(expected);
       assert.equal(formatters.section(section), expected);
     });
   });
