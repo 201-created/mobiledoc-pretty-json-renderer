@@ -19,8 +19,8 @@ describe('String utilities', function() {
 
   describe('#oneline', function() {
     it('separates array items with spaces', function() {
-      var markup = ['a', ['href', 'http://google.com', 'target', '_blank']];
       var expected = '["a", ["href", "http://google.com", "target", "_blank"]]';
+      var markup = JSON.parse(expected);
       assert.equal(utils.oneline(markup), expected);
     });
   });
